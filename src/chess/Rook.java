@@ -1,0 +1,49 @@
+/**
+ * The Rook piece.
+ * @author zalpha314
+ */
+
+package chess;
+
+
+import javax.swing.ImageIcon;
+
+public class Rook extends Piece{
+
+    public Rook(Player player, Square square){
+        super(player, square);
+        name = "Rook";
+        if (player.getNumber() == 1){
+            square.setIcon(new ImageIcon(getClass().getResource("/chess/resources/img/rook_white.png")));
+        }else{
+            square.setIcon(new ImageIcon(getClass().getResource("/chess/resources/img/rook_black.png")));
+        }
+    }
+    
+    public void updateAttackSpaces(){
+        getPlayer().addPiece(this);
+        attackSpaces.clear();
+        int i = getGridX();
+        for (int j = getGridY() +1 ; j <= Board.GRID_SIZE ; j++){  //Checking spaces below
+            if (!canCheckAnother(i,j)){
+                break;
+            }      
+        }
+        for (int j = getGridY() -1 ; j >= 0 ; j--){ //Checking spaces above
+            if (!canCheckAnother(i,j)){
+                break;
+            } 
+        }
+        int j = getGridY();
+        for (i = getGridX() +1 ; i <= Board.GRID_SIZE ; i++){ //Checking spaces to the right
+            if (!canCheckAnother(i,j)){
+                break;
+            } 
+        }
+        for (i = getGridX() -1 ; i >= 0 ; i--){ //Checking spaces to the left
+            if (!canCheckAnother(i,j)){
+                break;
+            } 
+        }
+    }
+}

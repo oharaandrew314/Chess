@@ -1,0 +1,30 @@
+-----Known Issues-----
++The window is locked to 700 x 700 pixels until I can resize the icons.
++I am not implementing an AI.  That is way over my level
+
+-----To Do-----
++Maybe add an installer
+
+-----ChangeLog-----
+
+-----v1.0 - June 2, 2011-----
++Major content finished.  Game released
+
+-----v1.1 - June 22, 2011-----
+--Bug Fixes--
++Fixed a bug where the game glitched if you started a new game when one was already in progress
++Fixed a bug where you could not put down your king if it was in check
++Fixed a bug where the orange square would persist if you could not move your king to that location
++Fixed a bug where the surrender button on the menu took up too much space
+
+--Other Changes--
++Refactored hundreds of lines of code for readability and intuitiveness
++Added a change log to the menu
+
+-----v1.11 - June 22, 2011-----
++Fixed a bug that caused an error message to appear when you picked up a pawn on the left or right edge of the board
+
+-----v1.12 - June 22, 2011-----
++Small tweaks to code
+
+--END_OF_FILE--
